@@ -1,19 +1,26 @@
 @import 'env';
 
-.BountyContainer {
+.BountyContainer {  
+
+}
+.BountyCardWrap {
   display: flex;   
   flex-wrap: wrap;
-  align-items: center;  ;
+  
+  align-items: stretch; 
 }
 .BountyCard {
-  border: 1px solid $bh-primary;
   margin: $bh-sp;  
   flex: 1 200px;
+  border: 1px solid $bh-primary;
 }
 .BountyCard_Header {
   border-bottom: 1px solid $bh-primary;
   padding: $bh-sp;
   margin-bottom: $bh-sp;
+}
+.BountyCard_text {
+  
 }
 .BountyContent {
   padding: $bh-sp;

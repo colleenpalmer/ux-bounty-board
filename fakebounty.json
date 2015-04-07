@@ -1,8 +1,8 @@
 [
   {
-    bhtitle: "Fix this Icon", 
+    title: "Fix this Icon", 
     bounty: "$2", 
-    details: "this is an awesome icon fix",
+    text: "this is an awesome icon fix",
     funded: true, 
     fundamount: "1", 
     commitdate: "1/12/16", 
@@ -17,8 +17,8 @@
 
   },
   {
-    bhtitle: "Change button color", 
-    details: "we need this stat!",
+    title: "Change button color", 
+    text: "we need this stat!",
     bounty: "$5", 
     bountyhunter: false, 
     fund: true, 
