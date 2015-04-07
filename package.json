@@ -1,0 +1,29 @@
+{
+  "name": "ic-ux-bounty-board",
+  "version": "0.0.0",
+  "description": "my first react",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run serve | npm run dev",
+    "serve": "./node_modules/.bin/http-server -p 8080",
+    "dev": "webpack-dev-server --progress --colors --port 8090"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "~0.13.1"
+  },
+  "devDependencies": {
+    "webpack": "~1.7.3",
+    "webpack-dev-server": "~1.8.0",
+    "jsx-loader": "~0.13.1",
+    "http-server": "~0.8.0",
+    "style-loader": "~0.9.0",
+    "css-loader": "~0.9.1",
+    "sass-loader": "~0.6.0",
+    "postcss-loader": "~0.3.0",
+    "autoprefixer-core": "~5.1.8",
+    "autoprefixer": "~5.1.0",
+    "autoprefixer-loader": "~1.2.0"
+  }
+}

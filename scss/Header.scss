@@ -1,0 +1,19 @@
+/* Main Navigation */
+@import 'env';
+
+header {
+  display: flex;
+  align-items: center;
+  padding: $bh-sp;
+  h1 {
+    flex: 1 80%;
+  }
+  div {
+    display: flex;
+    justify-content: flex-end;
+    border: 1px solid black;
+    button {
+      padding: $bh-sp;
+    }
+  }
+}

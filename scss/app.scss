@@ -1,0 +1,10 @@
+/* Styles for app */
+@import 'env';
+
+body {
+  background: $bh-background;
+  color: $bh-dark;
+  font-family: 'PT Sans', sans-serif;
+  padding: $bh-sp;
+}
+
