@@ -1,15 +1,16 @@
 /** @jsx React.DOM */
 'use strict'
 var React = require('react')
-require("./scss/BountyCard.scss")
+require("./styles/BountyCard.less")
+
 
 
 var BountyAction = React.createClass({
     render: function() {
       return (       
         <div className="BountyAction">
-          <button>doom</button>
-          <button>not doom</button>
+          <button className="BountyAction_Button BountyAction_Button-Fund">FUND</button>
+          <button className="BountyAction_Button BountyAction_Button-Claim">CLAIM IT</button>
         </div>
       );
     }
@@ -18,10 +19,18 @@ var BountyAction = React.createClass({
 var BountyContent = React.createClass({
 
     render: function() {
-      return (       
-        <p className="BountyHeader_Info" >
-          {this.props.text}
-        </p>
+      return (  
+        <div className="BountyContent">     
+          <header className="BountyContent_Price">
+            <h4>Current Bounty</h4>
+            <h3>
+              <span>{this.props.price}</span>
+            </h3>
+          </header>
+          <div className="BountyContent_Text" >
+            {this.props.text}
+          </div>
+        </div>
       );
     }
 });
@@ -31,7 +40,13 @@ var BountyHeader = React.createClass({
       return (       
         
         <div className="BountyCard_Header">
-          <h3 className="BountyHeader_Title" >
+          <div className="BountyCard_Header-Link">
+            <a href="#">
+              View Details
+              <img src="images/arrow.svg" />
+            </a>
+          </div>
+          <h3 className="BountyCard_Header-Title" >
             {this.props.title}
           </h3> 
         </div>
@@ -45,8 +60,10 @@ var BountyCard = React.createClass({
     render: function() {
       return (       
         <div className="BountyCard">
-          <BountyHeader title={this.props.title} />
-          <BountyContent text={this.props.text} />
+          <div className="BountyContent_Flex">
+            <BountyHeader title={this.props.title} />
+            <BountyContent text={this.props.text} price={this.props.price} />          
+          </div>
           <BountyAction />
         </div>
       );
@@ -62,7 +79,8 @@ var BountyCardWrap = React.createClass({
           return (
             <BountyCard 
               title={carddata.title} 
-              text={carddata.text} />                   
+              text={carddata.text}
+              price={carddata.price} />                   
           );
         })}
       </div>

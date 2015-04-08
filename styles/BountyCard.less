@@ -1,0 +1,135 @@
+@import "env.less";
+
+/// Layout
+.BountyCardWrap {
+  display: flex;     
+  flex-wrap: wrap;  
+  justify-content: space-between;    
+}
+.BountyCard {
+  flex: 0 auto;
+  width: 289px;
+  height: 465px;  
+  display: flex;  
+  flex-wrap: wrap;
+}
+.BountyContent_Flex {  
+  flex: 2 auto;
+  height: 100%;
+}
+.BountyAction {  
+  width: 100%;
+  display: flex;
+  align-self: flex-end;
+  .BountyAction_Button {
+    flex: 1 auto; // go full width
+  }
+}
+.BountyCard_Header {
+  flex: 1 100%;  
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start; 
+  height: 190px;
+  .BountyCard_Header-Link {
+    flex: 1 100%
+  }
+  .BountyCard_Header-Title {
+    flex: 1 100%;
+    display: flex;
+    align-items: flex-end;
+  }
+}
+
+.BountyContent {
+  width: 100%;
+}
+
+/// Presentational
+.BountyCard {
+  margin-bottom: 100px;  
+  background: #fff;
+}
+.BountyCard_Header {
+  padding: 10px ;
+  margin: 0;
+  .gradient(@pink-500, @pink-200);
+  .BountyCard_Header-Link {
+    text-align: right; 
+    a {
+      color: #fff;
+      text-decoration: none;
+      img {
+        padding-left: @bh-sp/2;
+      }
+    }
+  }
+  .BountyCard_Header-Title {
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    
+  }
+}
+.BountyContent_Flex {
+  border: 1px solid @bh-border;
+  border-bottom: none;
+}
+.BountyContent {
+  padding: @bh-sp;    
+}
+
+.BountyContent_Price {
+  width: 100%;
+  h4 {
+    color: #999999;
+    font-size: 13px;
+    padding: 0 0 @bh-sp 0;
+    margin: 0;
+  }
+  h3 {
+    color: #FF3E81;
+    padding: 0;
+    margin: 0;
+    font-size: 48px;
+  }
+}
+.BountyContent_Text {
+  padding: @bh-sp*2 0;
+  font-size: 16px;
+
+}
+.BountyAction {  
+  border: 1px solid @bh-border;
+  border-top: none;
+  .BountyAction_Button {    
+    border: none;
+    border-top: 1px solid @bh-border;
+    border-right: 1px solid @bh-border;
+    display: block;   
+    background: #fff;    
+    padding: @bh-sp 0;
+    font-weight: 700;
+    font-size: 16px;
+    .transition(0.2s, ease-out);
+    &:last-child {
+      border-right: none;
+    }
+    &-Fund {
+      color: @indigo-500;
+      &:hover {
+        background: @indigo-500;
+        color: #fff;
+        .transition(0.2s, ease-out);
+      }
+    }
+    &-Claim {
+      color: @green-500;
+      &:hover {
+        background: @green-500;
+        color: #fff;
+      }
+    }
+  }
+}
+

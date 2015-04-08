@@ -1,7 +1,31 @@
 /** @jsx React.DOM */
 'use strict'
 var React = require('react')
-require("./scss/Header.scss")
+require("./styles/Header.less")
+var mui = require('material-ui')
+var RaisedButton = mui.RaisedButton;
+
+var NewBounty = require('./NewBounty')
+
+var ButtonRound = React.createClass({
+    render: function() {
+      
+      return (       
+      
+        <div className="HeaderAction">
+          <button 
+            className="bh-ButtonRound"
+            >
+
+            {this.props.label}
+          </button>          
+        </div>
+        
+      );
+    }
+});
+
+
 
 module.exports = React.createClass({
     
@@ -9,11 +33,11 @@ module.exports = React.createClass({
     
     render: function(){
         return (
-          <header>
-            <h1>UX Bounty Board</h1>
-            <div>
-              <button href="#blah">Create New Bounty</button>
-            </div>            
+          <header className="Header">
+            <h1 className="Header_Title">Unclaimed Bounties</h1>
+            <div className="HeaderAction">
+              <RaisedButton className="bh-RaisedButton" label="Create a New Bounty" primary={true} />
+            </div>
           </header>
         )
     }

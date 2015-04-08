@@ -1,18 +1,19 @@
 /** @jsx React.DOM */
 'use strict'
 var React = require('react')
-require("./scss/app.scss")
-require("./scss/BountyCard.scss")
+require("./node_modules/normalize/index.styl")
+require("./styles/app.less")  
 
 var Header = require('./Header')
 var Bounty = require('./BountyCard')
 
-
 var carddata = [
-  {title: "Icon hunt", text: "hunt some icons"},
-  {title: "New colors", text: "change colors"},
-  {title: "Fix me!", text: "Bacon ipsum dolor amet pork chop rump ground round turducken venison leberkas pork loin jowl pancetta sausage chicken. Chuck drumstick meatball brisket picanha."},
-  {title: "New colors", text: "change colors"}
+  {title: "Replace the weird “send” icon", text: "hunt some icons", price: "$2.00"},
+  {title: "Ugly button that needs to be fixed in Calendar", text: "change colorschange colorschange colorschange colorschange colorschange colors", price: "$12.00"},
+  {title: "Tiny MCE needs minor button enhancements", text: "Bacon ipsum dolor amet pork chop rump ground round turducken venison leberkas pork loin jowl pancetta sausage chicken. Chuck drumstick meatball brisket picanha.", price: "$5.00"},
+  {title: "3 icons need to be updated to font icons", text: "change colors", price  : "$5.00"},
+  {title: "3 icons need to be updated to font icons", text: "change colors", price  : "$5.00"},
+  {title: "3 icons need to be updated to font icons", text: "change colors", price  : "$5.00"}
 ];
 
 var account = [
