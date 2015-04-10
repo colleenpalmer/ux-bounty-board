@@ -7,8 +7,9 @@ This is a small hack project to explore react and react components. By no means 
 ## To run it locally
 
 - Pull down the repo
-- Run  `npm install`
+- Run  `npm install && update`
 - Run `npm start`
+- Go `http://localhost:8080` in a browser
 
 ## Cool Dev Work Needed
 
