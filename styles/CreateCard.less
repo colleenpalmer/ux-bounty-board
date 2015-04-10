@@ -1,0 +1,35 @@
+@import "../node_modules/bootstrap/less/bootstrap.less";
+@import "env.less";
+
+// These are crappy classes and quick & dirty css. Plz 2 fix if really using
+.form-flex {
+  display: flex;
+  div {
+    flex: 1 50%;
+    margin-right: 15px;
+    &:last-child {margin-right: 0;}
+  }  
+}
+.form-padding {padding: @bh-sp;}
+.mui-dialog-title {
+  text-align: center;
+  border-bottom: 1px solid @bh-border;
+  padding-bottom: @bh-sp !important;
+}
+.mui-raised-button {
+  margin-left: @bh-sp;
+}
+.mui-dialog-content {
+  padding: 0 !important;
+}
+
+.form-actions {  
+  background: lighten(@bh-primary, 8%);      
+  display: flex;
+  justify-content: flex-end;  
+  padding: @bh-sp;
+  &.bh-RaisedButton {
+    flex: 1 50%;  
+
+  }
+}

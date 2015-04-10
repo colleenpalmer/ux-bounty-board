@@ -1,21 +1,42 @@
 /** @jsx React.DOM */
 'use strict'
 var React = require('react')
+
 require("./styles/BountyCard.less")
 
+var Avatar = require('./Avatar')
 
 
+
+/// Here's where the fun stuff begins...
+
+// Card - Action Buttons
 var BountyAction = React.createClass({
+
+    handleClickFund: function(event) {      
+      document.body.classList.remove('claim');
+      document.body.classList.add('funded');
+    },    
+    handleClickClaim: function(event) {     
+      document.body.classList.remove('funded'); 
+      document.body.classList.add('claim');
+    },    
     render: function() {
-      return (       
-        <div className="BountyAction">
-          <button className="BountyAction_Button BountyAction_Button-Fund">FUND</button>
-          <button className="BountyAction_Button BountyAction_Button-Claim">CLAIM IT</button>
+      return (   
+        <div className="BountyAction_Wrap">
+          <div className="BountyAction_Avatar">
+            <Avatar />
+          </div>
+          <div className="BountyAction">          
+            <button className="BountyAction_Button BountyAction_Button-Fund" onClick={this.handleClickFund}><span>FUND</span></button>
+            <button className="BountyAction_Button BountyAction_Button-Claim" onClick={this.handleClickClaim}><span>CLAIM IT</span></button>
+          </div>
         </div>
       );
     }
 });
 
+// Card - Content Block
 var BountyContent = React.createClass({
 
     render: function() {
@@ -29,11 +50,13 @@ var BountyContent = React.createClass({
           </header>
           <div className="BountyContent_Text" >
             {this.props.text}
-          </div>
+          </div>          
         </div>
       );
     }
 });
+
+// Card - Header Block
 var BountyHeader = React.createClass({
 
     render: function() {
@@ -41,7 +64,7 @@ var BountyHeader = React.createClass({
         
         <div className="BountyCard_Header">
           <div className="BountyCard_Header-Link">
-            <a href="#">
+            <a href={this.props.jira} >
               View Details
               <img src="images/arrow.svg" />
             </a>
@@ -55,21 +78,25 @@ var BountyHeader = React.createClass({
     }
 });
 
+// Card
+
 var BountyCard = React.createClass({
 
     render: function() {
       return (       
-        <div className="BountyCard">
+        <div className="BountyCard" id={this.props.fid}>
           <div className="BountyContent_Flex">
-            <BountyHeader title={this.props.title} />
-            <BountyContent text={this.props.text} price={this.props.price} />          
-          </div>
+            <BountyHeader title={this.props.title} jira={this.props.jira} />
+            <BountyContent text={this.props.text} price={this.props.price} fname={this.props.contributors} />          
+          </div>          
           <BountyAction />
         </div>
       );
     }
 });
 
+
+// Wrap around Card - can prolly get rid of this at somepoint...
 var BountyCardWrap = React.createClass({
   render: function() {        
 
@@ -80,7 +107,11 @@ var BountyCardWrap = React.createClass({
             <BountyCard 
               title={carddata.title} 
               text={carddata.text}
-              price={carddata.price} />                   
+              price={carddata.price}
+              jira={carddata.jira}
+              key={carddata.key}
+              fid={carddata.fid}          
+              />                   
           );
         })}
       </div>

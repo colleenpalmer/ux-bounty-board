@@ -9,7 +9,7 @@
 .BountyCard {
   flex: 0 auto;
   width: 289px;
-  height: 465px;  
+  height: 430px;  
   display: flex;  
   flex-wrap: wrap;
 }
@@ -17,10 +17,12 @@
   flex: 2 auto;
   height: 100%;
 }
-.BountyAction {  
-  width: 100%;
-  display: flex;
-  align-self: flex-end;
+.BountyAction_Wrap {  
+  width: 100%;  
+  .BountyAction {
+    display: flex;
+    align-self: flex-end;
+  }
   .BountyAction_Button {
     flex: 1 auto; // go full width
   }
@@ -47,13 +49,14 @@
 
 /// Presentational
 .BountyCard {
-  margin-bottom: 100px;  
-  background: #fff;
+  margin-bottom: 150px;  
+  background: #fff;  
 }
 .BountyCard_Header {
   padding: 10px ;
   margin: 0;
   .gradient(@pink-500, @pink-200);
+
   .BountyCard_Header-Link {
     text-align: right; 
     a {
@@ -68,9 +71,9 @@
     padding: 0;
     margin: 0;
     color: #fff;
-    
   }
 }
+
 .BountyContent_Flex {
   border: 1px solid @bh-border;
   border-bottom: none;
@@ -95,13 +98,18 @@
   }
 }
 .BountyContent_Text {
-  padding: @bh-sp*2 0;
+  padding: @bh-sp*2 0 0 0;
   font-size: 16px;
 
 }
+.BountyAction_Avatar {
+  border-right: 1px solid @bh-border;
+  border-left: 1px solid @bh-border;
+  padding: 0 @bh-sp @bh-sp @bh-sp;  
+}
 .BountyAction {  
   border: 1px solid @bh-border;
-  border-top: none;
+  border-top: none;  
   .BountyAction_Button {    
     border: none;
     border-top: 1px solid @bh-border;
@@ -132,4 +140,94 @@
     }
   }
 }
-
+/// THIS IS A HUGE HUGE HACK FOR 
+/// SHOWING OFF BEHAVIOR. PLEASE
+/// ERASE THIS WHEN IT'S IN REAL DEV LAND
+/// Funded Hack
+.funded &#funded {
+  @bh-border: @cyan-500;
+  .BountyCard_Header {
+    .gradient(@cyan-500, @cyan-200);  
+  }
+  .BountyContent_Flex {
+    border: 1px solid @bh-border;
+    border-bottom: none;
+  }
+  .BountyAction {  
+    border: 1px solid @bh-border;
+    border-top: none;  
+    .BountyAction_Button {        
+      border-top: 1px solid @bh-border;
+      border-right: 1px solid @bh-border;
+    }
+  }
+  .BountyAction_Avatar {
+    border-right: 1px solid @bh-border;
+    border-left: 1px solid @bh-border;
+  }
+  .BountyContent_Price {    
+    h3 {
+      color: #FF3E81;
+      span {display: none;}
+    }
+    h3:after {
+      color: #FF3E81;
+      content: "$6.00"
+    }
+  }
+  .BountyAction_Button {      
+    &-Fund {
+      background: @cyan-500;
+      color: #fff;
+      
+      span {
+        display: none;
+      }
+      &:after {
+        content: "YOUR FUNDED THIS!";  
+      }
+    }
+    &-Claim {
+      display: none;
+    }
+  }
+}
+/// Claim Hack
+.claim &#claimed {
+  @bh-border: @purple-500;
+  .BountyCard_Header {
+    .gradient(@purple-500, @purple-200);
+  }
+  .BountyContent_Flex {
+    border: 1px solid @bh-border;
+    border-bottom: none;
+  }
+  .BountyAction {  
+    border: 1px solid @bh-border;
+    border-top: none;  
+    .BountyAction_Button {        
+      border-top: 1px solid @bh-border;
+      border-right: 1px solid @bh-border;
+    }
+  }
+  .BountyAction_Avatar {
+    border-right: 1px solid @bh-border;
+    border-left: 1px solid @bh-border;
+  }
+  .BountyAction_Button {      
+    &-Fund {
+      display: none;
+    }
+    &-Claim {
+      background: @purple-500;
+      color: #fff;
+      
+      span {
+        display: none;
+      }
+      &:after {
+        content: "YOU CLAIMED THIS!";  
+      }
+    }
+  }
+}

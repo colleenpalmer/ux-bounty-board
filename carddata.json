@@ -1,0 +1,26 @@
+[
+  {
+    title: "Fix this Icon", 
+    bounty: "$2", 
+    text: "this is an awesome icon fix",
+    funded: true, 
+    fundamount: "1", 
+    commitdate: "1/12/16", 
+    jira:"http://ux.inst.com",
+    tilebgd: "#dddddd",
+    tileimg: "https://s3.amazonaws.com/uifaces/faces/twitter/adambetts/128.jpg"    
+
+  },
+  {
+    title: "Change button color", 
+    text: "we need this stat!",
+    bounty: "$5", 
+    bountyhunter: false, 
+    fund: true, 
+    fundamount: "1", 
+    commitdate: "1/12/16", 
+    jira:"http://ux.inst.com",
+    tilebgd: "#dddddd",
+    tileimg: "https://s3.amazonaws.com/uifaces/faces/twitter/adambetts/128.jpg"    
+  }  
+];
