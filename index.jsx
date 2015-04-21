@@ -3,8 +3,9 @@
 var React = require('react')
 
 require("./node_modules/normalize/index.styl")
-
+require("./styles/vendor/flexboxgrid.less")
 require("./styles/app.less")
+
 
 var Header = require('./Header')
 var Bounty = require('./BountyCard')

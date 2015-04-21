@@ -5,6 +5,9 @@ module.exports = {
   entry: {
     Home: './index.jsx'
   },
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
   output: {
       filename: 'bundle.js', //this is the default name, so you can skip it
       //at this directory our bundle file will be available
@@ -20,26 +23,20 @@ module.exports = {
       {
         test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.woff2$|\.eot$/,
         loader: "file"
-      },
+      },      
       {
-        test: /\.scss$/,
-          loader: "style!css!sass"
-
+        test: /\.less$/,
+        loader: 'style!css!postcss!less'
       },
       {
         test: /\.styl$/,
-        loader: 'style!css!stylus'
+        loader: 'style!css!postcss!stylus'
       },
       {
-        test: /\.less$/,
-        loader: 'style!css!less'
+        test: /\.scss$/,
+        loader: 'style!css!postcss!sass'
       }
-    ]
+    ]    
   },
-  postcss: [
-    autoprefixer({ browsers: ['last 2 version'] })
-  ],
-  resolve: {
-    extensions: ['', '.js', '.jsx']
-  }
+  postcss: [ autoprefixer({ browsers: ['last 2 version'] }) ]
 }
