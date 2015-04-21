@@ -11,7 +11,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "react": "~0.13.1"
+    "firebase": "^2.2.4",
+    "react": "~0.13.1",
+    "reactfire": "^0.4.0"
   },
   "devDependencies": {
     "webpack": "~1.7.3",

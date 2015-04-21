@@ -1,6 +1,7 @@
 /** @jsx React.DOM */
 'use strict'
 var React = require('react')
+var ReactFireMixin = require('reactfire')
 
 require("./styles/BountyCard.less")
 
@@ -121,15 +122,19 @@ var BountyCardWrap = React.createClass({
 
 
 module.exports = React.createClass({
-
     displayName: 'Bounty',
+    mixins: [ReactFireMixin],
+
+    componentWillMount: function() {
+      this.setState({data: []})
+      this.bindAsArray(this.props.data, 'data')
+    },
 
     render: function() {
-
-    return (
-      <div className="BountyContainer">
-        <BountyCardWrap data={this.props.data} />
-      </div>
-    );
-  }
+      return (
+        <div className="BountyContainer">
+          <BountyCardWrap data={this.state.data} />
+        </div>
+      );
+    }
 })
